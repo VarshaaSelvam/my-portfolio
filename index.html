@@ -115,13 +115,13 @@ h2.section-title{font-family:var(--font-serif);font-weight:400;font-size:48px;li
 .marquee-track{display:flex;gap:16px;width:max-content;animation:marquee 40s linear infinite}
 .marquee-pill{display:flex;align-items:center;gap:8px;border:1px solid var(--border);padding:6px 12px;font-size:12px;line-height:16px;letter-spacing:.7px;text-transform:uppercase;color:var(--muted);white-space:nowrap}
 .marquee-pill-dot{width:4px;height:4px;border-radius:9999px;background:var(--muted)}
-.about-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;margin-top:64px}
+.about-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:40px;margin-top:64px}
 .about-body p{font-size:16px;line-height:26px;color:var(--muted);margin-bottom:24px}.about-body strong{color:var(--foreground);font-weight:600}
 .about-stats{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border)}
 .stat-card{padding:32px;border-right:1px solid var(--border);border-bottom:1px solid var(--border)}.stat-card:nth-child(2n){border-right:0}.stat-card:nth-last-child(-n+2){border-bottom:0}
 .stat-card .num{font-family:var(--font-serif);font-size:48px;line-height:52.8px;letter-spacing:-1.2px}.stat-card .num span{color:var(--muted)}
 .stat-card .lbl{font-size:10px;line-height:15px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-top:8px}
-.skills-grid,.certs-grid,.creative-grid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:64px;border-top:1px solid var(--border);border-left:1px solid var(--border)}
+.skills-grid,.certs-grid,.creative-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:64px;border-top:1px solid var(--border);border-left:1px solid var(--border)}
 .skill-group,.cert-card,.creative-card{padding:32px;border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
 .skill-group-label,.project-problem,.contact-method-label{font-size:10px;line-height:15px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
 .skill-badges,.timeline-tags,.project-stack,.creative-badges,.project-cover-label{display:flex;flex-wrap:wrap;gap:8px}
@@ -137,8 +137,9 @@ h2.section-title{font-family:var(--font-serif);font-weight:400;font-size:48px;li
 .timeline-desc{max-width:720px;font-size:14px;line-height:22.75px;color:var(--muted);margin-top:16px}
 .timeline-achievements{margin:24px 0;max-width:720px;border:1px solid var(--border)}
 .achievement{padding:12px 16px;font-size:12px;line-height:19.5px;border-bottom:1px solid var(--border)}.achievement:last-child{border-bottom:0}
-.projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;margin-top:64px;border-top:1px solid var(--border);border-left:1px solid var(--border)}
+.projects-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;margin-top:64px;border-top:1px solid var(--border);border-left:1px solid var(--border)}
 .project-card{border-right:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;flex-direction:column;transition:background-color .15s var(--ease)}
+.project-card,.skill-group,.cert-card,.creative-card{min-width:0}
 .project-card:hover{background:rgba(77,77,77,.05)}
 .project-card.featured{grid-column:1/-1}
 .project-cover{background:none!important;padding:32px 32px 0}.project-cover-inner{display:none}
@@ -147,8 +148,8 @@ h2.section-title{font-family:var(--font-serif);font-weight:400;font-size:48px;li
 .project-title{font-family:var(--font-serif);font-weight:400;font-size:36px;line-height:40px;margin:8px 0 24px}
 .project-problem{margin-bottom:8px}
 .project-desc{font-size:14px;line-height:22.75px;color:var(--muted);max-width:720px}
-.project-metrics{display:flex;margin:24px 0;border:1px solid var(--border);width:max-content;max-width:100%}
-.metric{padding:12px 24px;border-right:1px solid var(--border)}.metric:last-child{border-right:0}
+.project-metrics{display:flex;flex-wrap:wrap;margin:24px 0;border:1px solid var(--border);width:max-content;max-width:100%}
+.metric{flex:1 1 72px;min-width:0;padding:12px 24px;border-right:1px solid var(--border)}.metric:last-child{border-right:0}
 .metric .v{font-family:var(--font-serif);font-size:30px;line-height:30px}.metric .k{font-size:9px;line-height:12.86px;letter-spacing:.9px;text-transform:uppercase;color:var(--muted);margin-top:4px}
 .project-stack{margin-top:24px}
 .project-links,.creative-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:auto;padding-top:24px}
@@ -157,7 +158,7 @@ h2.section-title{font-family:var(--font-serif);font-weight:400;font-size:48px;li
 .project-link svg,.creative-link svg{width:14px;height:14px}
 .cert-icon,.creative-card-emoji{display:none}
 .cert-card{display:block}.cert-name{font-family:var(--font-serif);font-size:20px;line-height:28px}.cert-issuer{font-size:10px;line-height:15px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-top:8px}
-.creative-grid{grid-template-columns:repeat(2,1fr)}
+.creative-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 .creative-card-title{font-family:var(--font-serif);font-weight:400;font-size:36px;line-height:40px}
 .creative-card-desc{font-size:14px;line-height:22.75px;color:var(--muted);margin:16px 0 24px}
 .contact-cards{border:1px solid var(--border);gap:0!important}
@@ -165,10 +166,17 @@ h2.section-title{font-family:var(--font-serif);font-weight:400;font-size:48px;li
 .contact-method:hover{background:rgba(77,77,77,.05);border-color:var(--border)}
 .contact-method-icon{width:40px;height:40px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted)}.contact-method-icon svg{width:16px;height:16px}
 .contact-method-label{margin-bottom:4px}.contact-method-value{font-size:14px;line-height:20px;font-weight:600}
-@media(max-width:1024px){.rail{display:none}.skills-grid,.certs-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:768px){.nav-links,.nav .btn-primary{display:none}.nav-hamburger{display:flex}.nav-mobile{display:flex}
-section{padding:64px 0}h2.section-title,.stat-card .num{font-size:36px;line-height:40px}.about-grid,.projects-grid,.creative-grid,.skills-grid,.certs-grid{grid-template-columns:1fr}
+@media(max-width:1024px){.rail{display:none}.skills-grid,.certs-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:900px){.nav-links,.nav .btn-primary{display:none}.nav-hamburger{display:flex}.nav-mobile{display:flex}.projects-grid{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:768px){section{padding:64px 0}h2.section-title,.stat-card .num{font-size:36px;line-height:40px}.about-grid,.creative-grid,.skills-grid,.certs-grid{grid-template-columns:minmax(0,1fr)}
 .hero-meta>*{border-right:0;border-bottom:1px solid var(--border);flex:1 1 100%}.hero-meta>*:last-child{border-bottom:0}.hero-avatar{height:72px;flex-basis:72px;width:auto}.status{display:none}.hero-subtitle{font-size:16px;line-height:26px}}
+@media(max-width:600px){.nav{padding:0 16px}.nav-mobile{padding:24px 16px}.container{padding:0 16px}section{padding:56px 0}
+.hero-title{font-size:clamp(40px,11vw,64px)}.hero-availability{max-width:100%;padding:6px 10px;font-size:10px;letter-spacing:1.5px}.hero-subtitle{margin-top:24px}
+.hero-cta-row{gap:12px;margin-top:28px}.btn-lg{padding:12px 20px}.hero-meta{margin-top:40px}.section-label{gap:10px;font-size:10px;letter-spacing:1.8px}
+h2.section-title,.stat-card .num{font-size:clamp(32px,9vw,36px);line-height:1.1}.about-grid,.timeline,.projects-grid,.skills-grid,.certs-grid,.creative-grid{margin-top:40px}
+.skill-group,.cert-card,.creative-card{padding:24px}.project-cover{padding:24px 24px 0}.project-body{padding:20px 24px 24px}.project-title,.creative-card-title{font-size:32px;line-height:1.1}.metric{padding:10px 12px}
+.contact-method{gap:12px;padding:16px}.contact-method-value{overflow-wrap:anywhere}}
+@media(max-width:360px){.container{padding:0 12px}.hero-title{font-size:40px}.hero-availability{letter-spacing:1px}.btn-lg{padding:10px 14px}.project-cover{padding:20px 16px 0}.project-body{padding:18px 16px 20px}.skill-group,.cert-card,.creative-card{padding:20px}.metric{padding:8px}}
 </style>
 </head>
 <body>
